@@ -23,9 +23,8 @@ public class StudentController {
 
     @PostMapping("save_student")
     @CrossOrigin
-    public String saveStudent(@RequestBody Student student) {
+    public void saveStudent(@RequestBody Student student) {
         IStudentService.saveStudent(student);
-        return "Student successfully saved";
     }
 
     @GetMapping("/{email}")
@@ -36,8 +35,8 @@ public class StudentController {
 
     @PutMapping("update_student")
     @CrossOrigin
-    public Student updateStudent(@RequestBody Student student) {
-        return IStudentService.updateStudent(student);
+    public void updateStudent(@RequestBody Student student) {
+        IStudentService.updateStudent(student);
     }
 
     @DeleteMapping("delete_student/{email}")

@@ -24,8 +24,8 @@ public class InMemoryIStudentService implements IStudentService {
     }
 
     @Override
-    public Student saveStudent(Student student) {
-        return repository.saveStudent(student);
+    public void saveStudent(Student student) {
+        repository.saveStudent(student);
     }
 
     @Override
@@ -34,8 +34,8 @@ public class InMemoryIStudentService implements IStudentService {
     }
 
     @Override
-    public Student updateStudent(Student student) {
-        return repository.updateStudent(student);
+    public void updateStudent(Student student) {
+        repository.updateStudent(student);
     }
 
     @Override

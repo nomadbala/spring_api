@@ -28,9 +28,8 @@ public class InMemoryStudentDAO {
      * @param student the student to be saved
      * @return the saved student
      */
-    public Student saveStudent(Student student) {
+    public void saveStudent(Student student) {
         STUDENTS.add(student);
-        return student;
     }
 
     /**
@@ -53,7 +52,7 @@ public class InMemoryStudentDAO {
      * @return the updated student
      * @throws IllegalArgumentException if no student with the specified email is found
      */
-    public Student updateStudent(Student student) {
+    public void updateStudent(Student student) {
         var studentIndex = IntStream.range(0, STUDENTS.size())
                            .filter(idx -> STUDENTS.get(idx).getEmail().equals(student.getEmail()))
                            .findFirst()
@@ -63,8 +62,6 @@ public class InMemoryStudentDAO {
             throw new IllegalArgumentException("Student with email " + student.getEmail() + " not found");
 
         STUDENTS.set(studentIndex, student);
-
-        return student;
     }
 
     /**
